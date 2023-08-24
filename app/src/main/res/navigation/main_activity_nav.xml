@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/AnaSayfaFragment">
+
+    <fragment
+        android:id="@+id/AnaSayfaFragment"
+        android:name="com.example.navigationcomponentornek2.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa">
+        <action
+            android:id="@+id/actionDetaySayfasiGecis"
+            app:destination="@id/DetayFragment2"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/DetayFragment2"
+        android:name="com.example.navigationcomponentornek2.DetayFragment"
+        android:label="fragment_detay"
+        tools:layout="@layout/fragment_detay">
+        <action
+            android:id="@+id/actionCiktiSayfasiGecis"
+            app:destination="@id/ciktiFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/AnaSayfaFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="ad"
+            app:argType="string"
+            android:defaultValue="ece" />
+        <argument
+            android:name="yas"
+            app:argType="integer"
+            android:defaultValue="22" />
+        <argument
+            android:name="soyad"
+            app:argType="string"
+            android:defaultValue="üner" />
+        <argument
+            android:name="nesne"
+            app:argType="com.example.navigationcomponentornek2.Kisiler" />
+        <argument
+            android:name="İsim"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/ciktiFragment"
+        android:name="com.example.navigationcomponentornek2.CiktiFragment"
+        android:label="fragment_cikti"
+        tools:layout="@layout/fragment_cikti" />
+</navigation>
